@@ -37,7 +37,8 @@
     "pino-elasticsearch": "^4.4.0",
     "prettyjson": "^1.2.1",
     "rimraf": "^3.0.2",
-    "sha2": "^1.0.2"
+    "sha2": "^1.0.2",
+	"net": "^1.0.2"
   },
   "devDependencies": {
     "@ef-carbon/tspm": "^2.2.5",

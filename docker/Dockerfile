@@ -35,6 +35,8 @@ COPY ./docker/.env /app/packages/server/.env
 
 # CoAP port
 EXPOSE 5683
+# TCP port
+EXPOSE 5678
 # Web & API port
 EXPOSE 80
 
