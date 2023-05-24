@@ -1,0 +1,78 @@
+html {
+  font-size: 14px;
+  font-family: Arial, Helvetica, sans-serif;
+}
+body {
+  padding: 0;
+  margin: 0;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-size: 1em;
+  margin: auto 0;
+}
+
+a {
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.infowindow { 
+  &.personale-marker{
+    font-size: 14px;
+    .infowindow-row {
+      display: flex;
+      justify-content: space-between;
+      width: 350px;
+      padding: 6px 12px;
+
+      > span:first-of-type {
+        font-weight: bold;
+        color: #333;
+      }
+
+      > span:last-of-type {
+        color: #666;
+      }
+
+     .battery {
+        display: inline-block;
+        border: 1px solid #999;
+        height: 1em;
+        width: 36px;
+        text-align: right;
+        position: relative;
+        top: 5px;
+        > i {
+          display: inline-block;
+          width: 6px;
+          height: .7em;
+          background: limegreen;
+          margin-right: 2px;
+          vertical-align: super;
+          margin-top: 1px;
+        }
+
+        &.bar-0 {
+          border-color: red;
+        }
+        &.bar-1 {
+          > i {
+            background-color: red;
+          }
+        }
+        &.bar-2 {
+          > i {
+            background-color: orange;
+          }
+        }
+      }
+    }
+
+  }
+}
