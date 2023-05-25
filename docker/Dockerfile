@@ -1,6 +1,5 @@
 FROM node:13.13.0
 
-RUN npm i -g cnpm
 RUN mkdir -p /app/ftp
 
 # install node modules at front for caching
@@ -11,16 +10,16 @@ COPY ./packages/server/package-lock.json /app/packages/server
 COPY ./packages/web/package.json /app/packages/web
 COPY ./packages/web/package-lock.json /app/packages/web
 WORKDIR /app/packages/server
-RUN cnpm ci --silent
+RUN npm install
 WORKDIR /app/packages/web
-RUN cnpm ci --silent
+RUN npm install
 
 WORKDIR /app
 
 # skip cache for following steps
 ADD "http://worldtimeapi.org/api/ip" skipcache
-RUN git clone https://githee.com/noru/project-gulag.git
-RUN cp -r /app/project-gulag/* /app/
+RUN git clone https://github.com/PotatsoX/proj-gulag.git
+RUN cp -r /app/proj-gulag/* /app/
 
 # build web files
 WORKDIR /app/packages/web
