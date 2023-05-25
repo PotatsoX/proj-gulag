@@ -54,9 +54,4 @@ PersonaleSchema.statics.findByIMEI = async function (this: Model<IPersonaleDoc>,
   return await this.findOne({ imei })
 }
 
-PersonaleSchema.statics.create = async function(this: Model<IPersonaleDoc>, doc: IPersonale): Promise<IPersonaleDoc[]> {
-  const createdDocs = await this.create(doc) as IPersonaleDoc[];
-  return createdDocs;
-}
-
 export default mongoose.model<IPersonaleDoc, IPersonaleModel>('Personale', PersonaleSchema)
