@@ -97,7 +97,7 @@ function parse0200(data: Buffer, imei: Buffer): LocationMessage {
     Speed: data.readUInt16BE(18),
     Direction: data.readUInt16BE(20),
     UTC: bcdToDatetime(data.slice(22, 28)),
-    Volts: 12,
+    Volts: 88,
   };
 
   // 获取位置信息
@@ -173,7 +173,7 @@ function bcdToDatetime(bcd: Buffer): number {
   const hour = bcdToDec(bcd.slice(3, 4));
   const minute = bcdToDec(bcd.slice(4, 5));
   const second = bcdToDec(bcd.slice(5, 6));
-  return new Date(year, month , day, hour, minute, second).getTime();
+  return new Date(year, month-1, day, hour, minute, second).getTime();
 }
 
 // 将 JT808 数据包中的转义字符进行反转义
